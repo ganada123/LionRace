@@ -36,12 +36,10 @@ public class PlayerCollisionHandler : MonoBehaviour
         if (collision.gameObject.CompareTag("Point"))
         {
             score += 3; // 점수 +3
-            Debug.Log("Point collected! Score: " + score);
         }
         else if (collision.gameObject.CompareTag("Block"))
         {
             score -= 5; // 점수 -5
-            Debug.Log("Block hit! Score: " + score);
         }
 
         // UI 점수 업데이트
@@ -78,7 +76,6 @@ public class PlayerCollisionHandler : MonoBehaviour
         // 게임 멈추기
         Time.timeScale = 0f; // 게임 시간을 멈춤
         isGameOver = true; // 게임 오버 상태 설정
-        Debug.Log("Game Over!");
     }
 
     // 점수를 자동으로 감소시키는 Coroutine
@@ -88,7 +85,6 @@ public class PlayerCollisionHandler : MonoBehaviour
         {
             // 점수 감소
             score -= 1;
-            Debug.Log("Score decreased automatically. Score: " + score);
 
             // UI 점수 업데이트
             UpdateScoreText();
